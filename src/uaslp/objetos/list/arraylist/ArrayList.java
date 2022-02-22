@@ -1,7 +1,7 @@
 package uaslp.objetos.list.arraylist;
 
 public class ArrayList {
-    private static final int DEFAULT_SIZE = 50;
+    private static final int DEFAULT_SIZE = 2;
     private String[] array;
     private int size;
 
@@ -30,9 +30,14 @@ public class ArrayList {
 
         if (size >= 0) System.arraycopy(array, 0, array, 1, size);
         array[0]=data;
+        size++;
     }
 
     public void remove (int index){
+        if(index < 0 || index >= size){
+            return;
+        }
+
         if (size - 1 - index >= 0) System.arraycopy(array, index + 1, array, index, size - 1 - index);
         array[size-1]=null;
         size--;
