@@ -1,9 +1,21 @@
 package uaslp.objetos.list.linkedlist;
 
+import java.util.List;
+
 public class LinkedList {
     private Node head;
     private Node tail;
     private int size;
+
+    private static int ListCount;
+
+    public LinkedList(){
+        ListCount++;
+    }
+
+    public static int getListsCount(){
+        return ListCount;
+    }
 
     public void addAtTail (String data){
         Node node = new Node(data);

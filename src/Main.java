@@ -5,10 +5,31 @@ import uaslp.objetos.list.linkedlist.LinkedListIterator;
 
 public class Main {
 
+    /*static int dato;
+    public void setDato(int dato){
+        Main.dato=dato;
+        System.out.println(dato);
+    }
+
+    public int getDato(){
+        return dato;
+    }*/
+
     public static void main(String[] args) {
-        ArrayList team1 = new ArrayList();
-        ArrayList team2 = new ArrayList();
-        ArrayList team3 = new ArrayList();
+        /*Main main1 = new Main();
+        Main main2 = new Main();
+
+        main1.setDato(10);
+        main2.setDato(20);
+
+        System.out.println(main1.getDato());
+        System.out.println(main2.getDato());*/
+
+        LinkedList team1 = new LinkedList();
+        LinkedList team2 = new LinkedList();
+        LinkedList team3 = new LinkedList();
+
+        System.out.println(LinkedList.getListsCount());
 
         team1.addAtTail("Daniel");
         team1.addAtTail("Rodrigo");
@@ -20,7 +41,7 @@ public class Main {
 
         team3.addAtFront("Huizar");
 
-        ArrayListIterator iterator;
+        LinkedListIterator iterator;
 
         iterator = team1.getIterator();
 
