@@ -13,6 +13,10 @@ public class LinkedList {
         ListCount++;
     }
 
+    /*public static String getName(){
+        return "LinkedList";
+    }*/
+
     public static int getListsCount(){
         return ListCount;
     }

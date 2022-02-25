@@ -5,6 +5,10 @@ public class ArrayList {
     private String[] array;
     private int size;
 
+    public static String getName(){
+        return "ArrayList";
+    }
+
     public ArrayList(){
         array = new String[DEFAULT_SIZE];
 
