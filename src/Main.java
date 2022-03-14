@@ -1,7 +1,14 @@
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.ArrayList;
+import uaslp.objetos.list.Iterator;
+import uaslp.objetos.list.List;
+import uaslp.objetos.list.arraylist.ArrayList;
+import uaslp.objetos.list.linkedlist.LinkedListIterator;
+import uaslp.objetos.list.linkedlist.LinkedList;
+
+//import java.sql.Array;
+//import java.util.Iterator;
+//import java.util.LinkedList;
+//import java.util.ArrayList;
 
 //Java Collections Framework
 
@@ -9,20 +16,21 @@ public class Main {
 
     //Generics
 
-    public static void main(String[] args) {
-        ArrayList<String> team1 = new ArrayList<>();
-        ArrayList<String> team2 = new ArrayList<>();
-        ArrayList<String> team3 = new ArrayList<>();
+    /*public static void main(String[] args) {
+
+        LinkedList<String> team1 = new LinkedList<>();
+        LinkedList<String> team2 = new LinkedList<>();
+        LinkedList<String> team3 = new LinkedList<>();
 
         //ArrayList<LinkedList<Integer>> team4 = new ArrayList<>();
 
         //Fuertemente tipado
 
-        /*team1.add(3);
+        //team1.add(3);
 
-        team1.add(new LinkedList());
+        //team1.add(new LinkedList());
 
-        team1.add(5.3);*/
+        //team1.add(5.3);
 
         team1.add("Daniel");
         team1.add("Rodrigo");
@@ -99,19 +107,27 @@ public class Main {
             String name=(String) iterator.next();
             System.out.println(name);
         }
+    }*/
+
+    public static void main(String[] args) {
+        System.out.println("ArrayList: \n");
+        metodo(new ArrayList(), new ArrayList(), new ArrayList());
+        System.out.println("***********************************");
+        System.out.println("LinkedList: \n");
+        metodo(new LinkedList(), new LinkedList(), new LinkedList());
     }
 
-    /*public static void main1(String[] args) {
+    public static void metodo(List team1,  List team2, List team3) {
 
 
-        LinkedList team1 = new LinkedList();
-        LinkedList team2 = new LinkedList();
-        LinkedList team3 = new LinkedList();
+        //List team1 = new ArrayList();
+        //List team2 = new LinkedList();
+        //List team3 = new ArrayList();
 
-        System.out.println(LinkedList.getListsCount());
+        //System.out.println(LinkedList.getListsCount());
 
         //LinkedList.getName();
-        ArrayList.getName();
+        //ArrayList.getName();
 
         team1.addAtTail("Daniel");
         team1.addAtTail("Rodrigo");
@@ -123,7 +139,7 @@ public class Main {
 
         team3.addAtFront("Huizar");
 
-        LinkedListIterator iterator;
+        Iterator iterator;
 
         iterator = team1.getIterator();
 
@@ -188,7 +204,7 @@ public class Main {
             String name=iterator.next();
             System.out.println(name);
         }
-    }*/
+    }
 
     /*public static void mainLinkedList(String[] args) {
         LinkedList team1 = new LinkedList();
