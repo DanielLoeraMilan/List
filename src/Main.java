@@ -111,13 +111,13 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("ArrayList: \n");
-        metodo(new ArrayList(), new ArrayList(), new ArrayList());
+        metodo(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
         System.out.println("***********************************");
         System.out.println("LinkedList: \n");
-        metodo(new LinkedList(), new LinkedList(), new LinkedList());
+        metodo(new LinkedList<>(), new LinkedList<>(), new LinkedList<>());
     }
 
-    public static void metodo(List team1,  List team2, List team3) {
+    public static void metodo(List<String> team1,  List<String> team2, List<String> team3) {
 
 
         //List team1 = new ArrayList();
@@ -139,7 +139,7 @@ public class Main {
 
         team3.addAtFront("Huizar");
 
-        Iterator iterator;
+        Iterator<String> iterator;
 
         iterator = team1.getIterator();
 
