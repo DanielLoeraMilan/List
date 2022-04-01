@@ -2,6 +2,8 @@
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
 import uaslp.objetos.list.arraylist.ArrayList;
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+import uaslp.objetos.list.exception.NotValidIndexException;
 import uaslp.objetos.list.linkedlist.LinkedListIterator;
 import uaslp.objetos.list.linkedlist.LinkedList;
 
@@ -110,14 +112,26 @@ public class Main {
     }*/
 
     public static void main(String[] args) {
-        System.out.println("ArrayList: \n");
-        metodo(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+        /*System.out.println("ArrayList: \n");
+        try {
+            metodo(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+        } catch (Exception e) {
+            System.out.println("Ocurrio un error: " + e.getMessage());
+        }*/
         System.out.println("***********************************");
         System.out.println("LinkedList: \n");
-        metodo(new LinkedList<>(), new LinkedList<>(), new LinkedList<>());
+        try {
+            metodo(new LinkedList<>(), new LinkedList<>(), new LinkedList<>());
+        } catch (NotValidIndexException e) {
+            System.out.println("Error: " + e.getMessage());
+            //e.printStackTrace();
+        } catch (NotNullValuesAllowedException ex){
+            System.out.println("Error: " + ex.getMessage());
+        }
+        System.out.println("El prorgrama no ha fallado");
     }
 
-    public static void metodo(List<String> team1,  List<String> team2, List<String> team3) {
+    public static void metodo(List<String> team1,  List<String> team2, List<String> team3) throws NotValidIndexException, NotNullValuesAllowedException {
 
 
         //List team1 = new ArrayList();
@@ -128,6 +142,8 @@ public class Main {
 
         //LinkedList.getName();
         //ArrayList.getName();
+
+        team1.remove(5);
 
         team1.addAtTail("Daniel");
         team1.addAtTail("Rodrigo");
@@ -155,7 +171,14 @@ public class Main {
             System.out.println(name);
         }
 
+        /*try{
+            team1.remove(0);
+        } catch(Exception ex){
+            System.out.println("No se pudo eliminar: " + ex.getMessage());
+        }*/
+
         team1.remove(0);
+
         team1.addAtFront("Alan");
         System.out.println("Team 1 tiene: " + team1.getSize() + " integrantes");
 
