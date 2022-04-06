@@ -133,7 +133,6 @@ public class Main {
 
     public static void metodo(List<String> team1,  List<String> team2, List<String> team3) throws NotValidIndexException, NotNullValuesAllowedException {
 
-
         //List team1 = new ArrayList();
         //List team2 = new LinkedList();
         //List team3 = new ArrayList();
@@ -143,9 +142,10 @@ public class Main {
         //LinkedList.getName();
         //ArrayList.getName();
 
-        team1.remove(5);
+        //team1.remove(5);
 
-        team1.addAtTail("Daniel");
+
+        team1.addAtTail(null);
         team1.addAtTail("Rodrigo");
         team1.addAtTail("Javier");
 
@@ -200,7 +200,7 @@ public class Main {
             System.out.println(name);
         }
 
-        team3.remove(0);
+        //team3.remove(0);
         team3.remove(0); //El elemento no existe pero el programa no debe cerrarse por algún error
 
         team3.addAtTail("Humberto");

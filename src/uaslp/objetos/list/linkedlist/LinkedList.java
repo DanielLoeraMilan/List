@@ -10,20 +10,6 @@ public class LinkedList <T> implements List <T> {
     private Node<T> tail;
     private int size;
 
-    private static int ListCount;
-
-    public LinkedList(){
-        ListCount++;
-    }
-
-    /*public static String getName(){
-        return "LinkedList";
-    }*/
-
-    public static int getListsCount(){
-        return ListCount;
-    }
-
     public void addAtTail (T data)throws NotNullValuesAllowedException{
         if(data==null){
             throw new NotNullValuesAllowedException();
@@ -63,23 +49,13 @@ public class LinkedList <T> implements List <T> {
     public void remove (int index) throws NotValidIndexException {
         Node<T> node = findNode(index);
 
-        if(node == null){
-            return;
-        }
-
         if(size ==1){
             head = null;
             tail = null;
         } else if(node == head){
             head = node.next;
-            if(head != null){
-                head.previous = null;
-            }
         } else if(node == tail){
             tail = node.previous;
-            if(tail != null){
-                tail.next = null;
-            }
         } else{
             node.previous.next = node.next;
             node.next.previous = node.previous;
@@ -103,9 +79,8 @@ public class LinkedList <T> implements List <T> {
         Node<T> node = findNode(index);
         //int currentIndex = 0;
 
-        if(node != null){
-            node.data=data;
-        }
+        node.data=data;
+
     }
 
     public T getAt (int index) throws NotValidIndexException {
