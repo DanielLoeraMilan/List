@@ -112,12 +112,12 @@ public class Main {
     }*/
 
     public static void main(String[] args) {
-        /*System.out.println("ArrayList: \n");
+        System.out.println("ArrayList: \n");
         try {
             metodo(new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
         } catch (Exception e) {
             System.out.println("Ocurrio un error: " + e.getMessage());
-        }*/
+        }
         System.out.println("***********************************");
         System.out.println("LinkedList: \n");
         try {

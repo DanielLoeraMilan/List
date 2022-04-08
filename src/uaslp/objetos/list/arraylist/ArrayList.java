@@ -2,27 +2,28 @@ package uaslp.objetos.list.arraylist;
 
 import uaslp.objetos.list.Iterator;
 import uaslp.objetos.list.List;
+import uaslp.objetos.list.exception.NotNullValuesAllowedException;
+import uaslp.objetos.list.exception.NotValidIndexException;
 
 public class ArrayList <T> implements List<T> {
-    private static final int DEFAULT_SIZE = 2;
+    private static final int DEFAULT_SIZE = 1;
     private T[] array;
     private int size;
 
-    public static String getName(){
-        return "ArrayList";
-    }
-
-    public ArrayList(){
-        array = (T[])new Object[DEFAULT_SIZE];
-
-    }
-
     public ArrayList(int size){
-        array = (T[])new Object[size];
+        array= (T[]) new Object[size];
+    }
+
+    public ArrayList() {
+        array = (T[]) new Object[DEFAULT_SIZE];
     }
 
     @Override
-    public void addAtTail (T data){
+    public void addAtTail (T data) throws NotNullValuesAllowedException {
+        if(data == null){
+            throw new NotNullValuesAllowedException();
+        }
+
         if(size==array.length){
             increaseArraySize();
         }
@@ -32,7 +33,11 @@ public class ArrayList <T> implements List<T> {
     }
 
     @Override
-    public void addAtFront (T data){
+    public void addAtFront (T data) throws NotNullValuesAllowedException {
+        if(data == null){
+            throw new NotNullValuesAllowedException();
+        }
+
         if(size==array.length){
             increaseArraySize();
         }
@@ -62,7 +67,10 @@ public class ArrayList <T> implements List<T> {
     }
 
     @Override
-    public void setAt (int index, T data){
+    public void setAt (int index, T data) throws NotNullValuesAllowedException{
+        if(data==null){
+            throw new NotNullValuesAllowedException();
+        }
         if(index >= 0 && index<size){
             array[index]=data;
         }
